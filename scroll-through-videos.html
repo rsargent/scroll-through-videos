@@ -1,0 +1,86 @@
+
+
+<html>
+  <head>
+    <script src="./jquery-3.7.1.min.js"></script>
+<style>
+  video {height:300px}
+  img {height:300px}
+  div {display:inline-block; overflow:hidden; height:300px}
+  body {margin:0px}
+  .label {
+      font-size: 12px;
+      writing-mode: vertical-lr;
+      transform: rotate(180deg);
+      text-align: center;
+  }
+</style>
+</head>
+
+<body>
+<video src="foo01.mp4" loop muted playbackRate=1></video>
+<video src="foo02.mp4" loop muted playbackRate=1></video>
+<video src="foo03.mp4" loop muted playbackRate=1></video>
+<video src="foo04.mp4" loop muted playbackRate=1></video>
+<video src="foo05.mp4" loop muted playbackRate=1></video>
+<video src="foo06.mp4" loop muted playbackRate=1></video>
+<video src="foo07.mp4" loop muted playbackRate=1></video>
+<video src="foo08.mp4" loop muted playbackRate=1></video>
+<video src="foo09.mp4" loop muted playbackRate=1></video>
+<video src="foo10.mp4" loop muted playbackRate=1></video>
+<video src="foo11.mp4" loop muted playbackRate=1></video>
+<video src="foo12.mp4" loop muted playbackRate=1></video>
+<video src="foo13.mp4" loop muted playbackRate=1></video>
+<video src="foo14.mp4" loop muted playbackRate=1></video>
+<video src="foo15.mp4" loop muted playbackRate=1></video>
+<video src="foo16.mp4" loop muted playbackRate=1></video>
+<video src="foo17.mp4" loop muted playbackRate=1></video>
+<video src="foo18.mp4" loop muted playbackRate=1></video>
+<video src="foo19.mp4" loop muted playbackRate=1></video>
+<video src="foo20.mp4" loop muted playbackRate=1></video>
+</body>
+
+<script>
+
+var ggg;
+function fixupVideo(v) {
+  console.log(v);
+  var d = v.wrap('<div/>');
+  console.log(d);
+  if (v.attr('playbackRate')) {
+    v[0].playbackRate = parseFloat($(v).attr('playbackRate'));
+  }
+  if (v.attr('trimRight')) {
+    vvv = v;
+    ddd = d;
+  }
+}
+
+function init() {
+  console.log('init');
+  let observer = new IntersectionObserver(
+    (entries, observer) => {
+      for (entry of entries) {
+        if (entry.isIntersecting) {
+	  console.log('play', entry.target);
+          entry.target.play();
+        } else  {
+	  console.log('pause', entry.target);
+          entry.target.pause(); 
+	}
+      }
+    },
+    {threshold: 0}
+  );
+  
+  $('img,video').each(function(i,v){
+    fixupVideo($(v));
+    console.log('setting up', v);
+    observer.observe(v);
+  });
+}
+
+$(init);
+</script>
+</body>
+</html>
