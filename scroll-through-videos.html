@@ -1,43 +1,106 @@
-
-
 <html>
   <head>
     <script src="js/jquery-3.7.1.min.js"></script>
 <style>
+  .video-container {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
   video {height:300px}
   img {height:300px}
-  div {display:inline-block; overflow:hidden; height:300px}
-  body {margin:0px}
-  .label {
-      font-size: 12px;
-      writing-mode: vertical-lr;
-      transform: rotate(180deg);
-      text-align: center;
+  .video-wrapper {display:inline-block; overflow:hidden; height:300px}
+  .video-label {
+    margin-top: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
   }
+  body {margin:0px}
 </style>
 </head>
 
 <body>
-<video src="vids/foo01.mp4" loop muted playbackRate=1></video>
-<video src="vids/foo02.mp4" loop muted playbackRate=1></video>
-<video src="vids/foo03.mp4" loop muted playbackRate=1></video>
-<video src="vids/foo04.mp4" loop muted playbackRate=1></video>
-<video src="vids/foo05.mp4" loop muted playbackRate=1></video>
-<video src="vids/foo06.mp4" loop muted playbackRate=1></video>
-<video src="vids/foo07.mp4" loop muted playbackRate=1></video>
-<video src="vids/foo08.mp4" loop muted playbackRate=1></video>
-<video src="vids/foo09.mp4" loop muted playbackRate=1></video>
-<video src="vids/foo10.mp4" loop muted playbackRate=1></video>
-<video src="vids/foo11.mp4" loop muted playbackRate=1></video>
-<video src="vids/foo12.mp4" loop muted playbackRate=1></video>
-<video src="vids/foo13.mp4" loop muted playbackRate=1></video>
-<video src="vids/foo14.mp4" loop muted playbackRate=1></video>
-<video src="vids/foo15.mp4" loop muted playbackRate=1></video>
-<video src="vids/foo16.mp4" loop muted playbackRate=1></video>
-<video src="vids/foo17.mp4" loop muted playbackRate=1></video>
-<video src="vids/foo18.mp4" loop muted playbackRate=1></video>
-<video src="vids/foo19.mp4" loop muted playbackRate=1></video>
-<video src="vids/foo20.mp4" loop muted playbackRate=1></video>
+<div class="video-container">
+  <video src="vids/foo01.mp4" loop muted playbackRate=1></video>
+  <div class="video-label">Video 1</div>
+</div>
+<div class="video-container">
+  <video src="vids/foo02.mp4" loop muted playbackRate=1></video>
+  <div class="video-label">Video 2</div>
+</div>
+<div class="video-container">
+  <video src="vids/foo03.mp4" loop muted playbackRate=1></video>
+  <div class="video-label">Video 3</div>
+</div>
+<div class="video-container">
+  <video src="vids/foo04.mp4" loop muted playbackRate=1></video>
+  <div class="video-label">Video 4</div>
+</div>
+<div class="video-container">
+  <video src="vids/foo05.mp4" loop muted playbackRate=1></video>
+  <div class="video-label">Video 5</div>
+</div>
+<div class="video-container">
+  <video src="vids/foo06.mp4" loop muted playbackRate=1></video>
+  <div class="video-label">Video 6</div>
+</div>
+<div class="video-container">
+  <video src="vids/foo07.mp4" loop muted playbackRate=1></video>
+  <div class="video-label">Video 7</div>
+</div>
+<div class="video-container">
+  <video src="vids/foo08.mp4" loop muted playbackRate=1></video>
+  <div class="video-label">Video 8</div>
+</div>
+<div class="video-container">
+  <video src="vids/foo09.mp4" loop muted playbackRate=1></video>
+  <div class="video-label">Video 9</div>
+</div>
+<div class="video-container">
+  <video src="vids/foo10.mp4" loop muted playbackRate=1></video>
+  <div class="video-label">Video 10</div>
+</div>
+<div class="video-container">
+  <video src="vids/foo11.mp4" loop muted playbackRate=1></video>
+  <div class="video-label">Video 11</div>
+</div>
+<div class="video-container">
+  <video src="vids/foo12.mp4" loop muted playbackRate=1></video>
+  <div class="video-label">Video 12</div>
+</div>
+<div class="video-container">
+  <video src="vids/foo13.mp4" loop muted playbackRate=1></video>
+  <div class="video-label">Video 13</div>
+</div>
+<div class="video-container">
+  <video src="vids/foo14.mp4" loop muted playbackRate=1></video>
+  <div class="video-label">Video 14</div>
+</div>
+<div class="video-container">
+  <video src="vids/foo15.mp4" loop muted playbackRate=1></video>
+  <div class="video-label">Video 15</div>
+</div>
+<div class="video-container">
+  <video src="vids/foo16.mp4" loop muted playbackRate=1></video>
+  <div class="video-label">Video 16</div>
+</div>
+<div class="video-container">
+  <video src="vids/foo17.mp4" loop muted playbackRate=1></video>
+  <div class="video-label">Video 17</div>
+</div>
+<div class="video-container">
+  <video src="vids/foo18.mp4" loop muted playbackRate=1></video>
+  <div class="video-label">Video 18</div>
+</div>
+<div class="video-container">
+  <video src="vids/foo19.mp4" loop muted playbackRate=1></video>
+  <div class="video-label">Video 19</div>
+</div>
+<div class="video-container">
+  <video src="vids/foo20.mp4" loop muted playbackRate=1></video>
+  <div class="video-label">Video 20</div>
+</div>
 </body>
 
 <script>
@@ -45,7 +108,7 @@
 var ggg;
 function fixupVideo(v) {
   console.log(v);
-  var d = v.wrap('<div/>');
+  var d = v.wrap('<div class="video-wrapper"/>');
   console.log(d);
   if (v.attr('playbackRate')) {
     v[0].playbackRate = parseFloat($(v).attr('playbackRate'));
